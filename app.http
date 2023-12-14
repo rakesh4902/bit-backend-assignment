@@ -1,0 +1,127 @@
+
+###REGISTRATION OF USER###
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+    "username":"rakesh",
+    "password":"rakesh123"
+}
+
+
+###
+
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+    "username":"bit",
+    "password":"bit123"
+}
+
+###LOGIN USING CREDENTIALS###
+
+POST http://localhost:3000/login/ 
+Content-Type: application/json
+
+{
+    "username":"bit",
+    "password":"bit123"
+}
+###
+
+POST http://localhost:3000/login/ 
+Content-Type: application/json
+
+{
+    "username":"rakesh",
+    "password":"rakesh123"
+}
+
+
+###CREATE TASKS###
+
+POST http://localhost:3000/tasks
+Content-Type: application/json
+Authorization: Bearer <jwt-Token>
+
+
+{
+    "title": "Java-Task", 
+    "description": "Complete Basic of Java", 
+    "due_date": "2023-12-13", 
+    "status": "Pending"
+}
+
+###
+
+POST http://localhost:3000/tasks
+Content-Type: application/json
+Authorization: Bearer <jwt-Token>
+
+{
+    "title": "C-Task", 
+    "description": "Complete Basic of C", 
+    "due_date": "2023-12-13", 
+    "status": "Pending"
+}
+
+###CREATE TASKS FOR ANOTHER USER###
+
+POST http://localhost:3000/tasks
+Content-Type: application/json
+Authorization: Bearer <jwt-Token>
+
+{
+    "title": "Java-Task", 
+    "description": "Complete Basic of Java", 
+    "due_date": "2023-12-13", 
+    "status": "Pending"
+}
+
+###
+
+POST http://localhost:3000/tasks
+Content-Type: application/json
+Authorization: Bearer <jwt-Token>
+
+{
+    "title": "C-Task", 
+    "description": "Complete Basic of C", 
+    "due_date": "2023-12-13", 
+    "status": "Pending"
+}
+
+###GET ALL TASKS###
+GET http://localhost:3000/tasks/
+Authorization: Bearer <jwt-Token>
+
+###GET ALL TASKS FOR ANOTHER USER###
+GET http://localhost:3000/tasks/
+Authorization: Bearer <jwt-Token>
+
+###GET SPECIFIC TASK###
+
+GET http://localhost:3000/tasks/1
+Authorization: Bearer <jwt-Token>
+
+
+####UPDATE EXISTING TASK###
+
+PUT http://localhost:3000/tasks/1
+Content-Type: application/json
+Authorization: Bearer <jwt-Token>
+
+{
+    "title": "Java-Task", 
+    "description": "Complete Basic of Java", 
+    "due_date": "2023-12-13", 
+    "status": "Completed"
+}
+
+
+###DELETE THE TASK###
+DELETE http://localhost:3000/tasks/2
+Authorization: Bearer <jwt-Token>
+
+
